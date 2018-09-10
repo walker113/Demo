@@ -17,7 +17,7 @@ public class MessgeDetail {
         LogDetail.Debug();
     }
 
-    public static void merge () {
+    public static void sMerge () {
         System.out.println("merge后，两个Branch内容相同，指向同一个commit");
     }
 }
