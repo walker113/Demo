@@ -16,4 +16,8 @@ public class MessgeDetail {
     public static void recvNetworkMsg () {
         LogDetail.Debug();
     }
+
+    public static void merge () {
+        System.out.println("merge后，两个Branch内容相同，指向同一个commit");
+    }
 }
