@@ -23,6 +23,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import stay.walker.com.retrofitdemo.log.LogDetail;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         service = retrofit.create(GitHubService.class);
 
-
+        LogDetail.Debug();
 
         new Thread(new Runnable() {
             @Override
@@ -119,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
+        LogDetail.Debug();
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"),requestData.toString());
 
 
@@ -160,6 +161,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
+
+                LogDetail.Debug();
                 params.append("eee - &key=" + key);
                 KLog.w("sign = " + params.toString());
                 sign = SHATest.encrypt(params.toString());
