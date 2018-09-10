@@ -132,12 +132,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    class CLoudQRStatusReq {
+    static class CLoudQRStatusReq {
 
+        public static String str;
         public String tranCode, customerId, orderChannel, accountNo, transferStt, bsnCode, rechargeFlag, pageFlag;
 
 
-        public String getParamSign()  {
+        public String getParamSign() throws IllegalAccessException, IllegalArgumentException, Exception {
             String sign = "";
             StringBuilder params = new StringBuilder();
             Field[] fs = getClass().getFields();
@@ -159,16 +160,10 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 }
-                params.append("&key=" + key);
+                params.append("eee - &key=" + key);
                 KLog.w("sign = " + params.toString());
                 sign = SHATest.encrypt(params.toString());
             } catch (NoSuchFieldException e) {
-                e.printStackTrace();
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            } catch (IllegalArgumentException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
                 e.printStackTrace();
             }
             return sign;
