@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
 
     static class CLoudQRStatusReq {
 
-        public static String str;
+        public static String str = "delete merge";
         public String tranCode, customerId, orderChannel, accountNo, transferStt, bsnCode, rechargeFlag, pageFlag;
 
 
