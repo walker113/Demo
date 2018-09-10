@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         service = retrofit.create(GitHubService.class);
 
-        LogDetail.D();
+        LogDetail.Debug();
 
         new Thread(new Runnable() {
             @Override
@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        LogDetail.D();
+        LogDetail.Debug();
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/json"),requestData.toString());
 
 
@@ -162,7 +162,7 @@ public class MainActivity extends AppCompatActivity {
 
                 }
 
-                LogDetail.D();
+                LogDetail.Debug();
                 params.append("eee - &key=" + key);
                 KLog.w("sign = " + params.toString());
                 sign = SHATest.encrypt(params.toString());

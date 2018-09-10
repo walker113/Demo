@@ -7,7 +7,13 @@ package stay.walker.com.retrofitdemo.log;
  * @author walker
  */
 public class LogDetail {
-    public static void D () {
-        System.out.println();
+    public static void Debug () {
+
+
+        System.out.println("bbb");
+        System.out.println("aaa");
+    }
+    public static void V() {
+
     }
 }
