@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity {
 
     static class CLoudQRStatusReq {
 
-        public static String str;
         public String tranCode, customerId, orderChannel, accountNo, transferStt, bsnCode, rechargeFlag, pageFlag;
 
 
