@@ -20,4 +20,21 @@ public class FaceDet {
         System.out.println("3");
         System.out.println("4");
     }
+
+    public static void baiduFace () {
+        System.out.println("功能2，添加");
+        System.out.println("功能2，添加");
+        System.out.println("功能2，添加");
+        System.out.println("功能2，添加");
+        System.out.println("功能2，添加");
+    }
+
+
+    public static void faceFace () {
+        System.out.println("功能4，添加");
+        System.out.println("功能4，添加");
+        System.out.println("功能4，添加");
+        System.out.println("功能4，添加");
+        System.out.println("功能4，添加");
+    }
 }
