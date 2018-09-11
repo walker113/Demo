@@ -37,4 +37,12 @@ public class FaceDet {
         System.out.println("功能4，添加");
         System.out.println("功能4，添加");
     }
+
+    public static void personFace () {
+        System.out.println("功能7，添加");
+        System.out.println("功能7，添加");
+        System.out.println("功能7，添加");
+        System.out.println("功能7，添加");
+        System.out.println("功能7，添加");
+    }
 }
