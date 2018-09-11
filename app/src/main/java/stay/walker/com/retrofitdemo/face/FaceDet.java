@@ -11,6 +11,5 @@ public class FaceDet {
         System.out.println("google 人脸检测 ===========");
         System.out.println("请问错误的commit，要怎么处理呢？");
         System.out.println("倒数第二天写错了要怎么处理？");
-        System.out.println("倒数第二天写错了要怎么处理？");
     }
 }
