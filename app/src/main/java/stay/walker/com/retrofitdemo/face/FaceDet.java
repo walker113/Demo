@@ -7,6 +7,7 @@ package stay.walker.com.retrofitdemo.face;
 public class FaceDet {
 
     public static void googleFaceDetector() {
-        System.out.println("google 人脸检测 +++-+++++- ");
+
+        System.out.println("google 人脸检测 ===========");
     }
 }
