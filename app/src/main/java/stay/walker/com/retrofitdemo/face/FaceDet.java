@@ -13,5 +13,8 @@ public class FaceDet {
         System.out.println("倒数第二天写错了要怎么处理？");
         System.out.println("错误的commit已经push到远端的master要怎么处理呢？");
         System.out.println("答案：使用revert");
+
+
+        System.out.println("1");
     }
 }
