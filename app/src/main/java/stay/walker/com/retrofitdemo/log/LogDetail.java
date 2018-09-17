@@ -16,4 +16,15 @@ public class LogDetail {
     public static void V() {
 
     }
+
+
+
+
+    public static void Error() {
+        System.out.println("功能1，添加");
+        System.out.println("功能1，添加");
+        System.out.println("功能1，添加");
+        System.out.println("功能1，添加");
+        System.out.println("功能1，添加");
+    }
 }
