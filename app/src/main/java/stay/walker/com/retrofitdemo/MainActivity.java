@@ -3,6 +3,7 @@ package stay.walker.com.retrofitdemo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 
 import com.socks.library.KLog;
 
@@ -132,6 +133,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
+
 
     static class CLoudQRStatusReq {
 

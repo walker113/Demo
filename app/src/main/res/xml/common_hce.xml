@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<host-apdu-service xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/app_name"
+    android:requireDeviceUnlock="false">
+    <aid-group android:description="@string/app_name" android:category="payment" >
+        <aid-filter android:name="315041592E5359532E4444463031"/>
+        <aid-filter android:name="325041592E5359532E4444463031" />
+        <aid-filter android:name="A00000000386980701"/>
+        <aid-filter android:name="4A51594B542E33463030" />
+        <aid-filter android:name="A000000333010101" />
+        <aid-filter android:name="A000000333010102" />
+        <aid-filter android:name="A000000333010103" />
+        <aid-filter android:name="A000000333010106" />
+        <aid-filter android:name="7768742E7061792E6464663031"/>
+        <aid-filter android:name="FD000001FD" />
+         <aid-filter android:name="A000000632010105"/>
+         
+         <aid-filter android:name="5041592E41505059"/>
+        <aid-filter android:name="5041592E5449434C"/>
+        <aid-filter android:name="5041592E4D463158"/>
+        <aid-filter android:name="506369646174612E636E01" /><!--企业云卡 -->
+        
+    </aid-group>
+
+</host-apdu-service>
+    <!--android:apduServiceBanner="@drawable/ic_launcher"-->
