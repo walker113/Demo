@@ -42,12 +42,16 @@
 
         </activity>
         <activity android:name="stay.walker.com.web.WebPhotoActivity" >
+
+        </activity>
+        <activity android:name="stay.walker.com.jd.JdActivtity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="stay.walker.com.eventbus.SecondActivity" />
 
         <service android:name="stay.walker.com.web.CommonHceService"
             android:exported="true"
