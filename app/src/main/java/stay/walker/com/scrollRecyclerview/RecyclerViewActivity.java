@@ -5,8 +5,10 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
@@ -20,25 +22,45 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import stay.walker.com.retrofitdemo.R;
 
-public class RecyclerViewActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener {
+public class RecyclerViewActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener, View.OnClickListener, SwitchPopupWindow.OnSwitchListner {
 
     @BindView(R.id.rlv)
     RecyclerView mRecycler;
+    private List<String> mStrings;
 
+    private Toolbar mToolbar;
+    private TextView mTvTitle;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_recycler);
         ButterKnife.bind(this);
 
+        mToolbar = findViewById(R.id.detail_toolbar);
+        mTvTitle = findViewById(R.id.detail_tv_title);
+        mTvTitle.setOnClickListener(this);
+        mToolbar.setTitle("");
+        setSupportActionBar(mToolbar);
 
         initView();
+        mStrings = Arrays.asList("aaa", "bbb");
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.switch_rv);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        PopupSelectAdapter adapter = new PopupSelectAdapter(R.layout.item_switch, mStrings);
+        recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
+            }
+        });
     }
     private List<String> mRvStrings;
     private void initView() {
         mRvStrings = Arrays.asList("0", "1", "2", "3", "4", "5");
 
-        mRecycler.setLayoutManager(new ScrollLinearLayoutManager(this));
+        mRecycler.setLayoutManager(new LinearLayoutManager(this));
         CardDetailRvAdapter rvAdapter = new CardDetailRvAdapter(mRvStrings);
         mRecycler.setAdapter(rvAdapter);
 
@@ -102,5 +124,16 @@ public class RecyclerViewActivity extends AppCompatActivity implements BaseQuick
     @Override
     public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
         ToastUtils.showShort(position);
+    }
+
+    @Override
+    public void onClick(View view) {
+        SwitchPopupWindow window = new SwitchPopupWindow(this, mStrings, this);
+        window.showAsDropDown(mToolbar);
+    }
+
+    @Override
+    public void onSwitch(int position) {
+
     }
 }

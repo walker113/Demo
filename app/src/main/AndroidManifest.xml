@@ -55,6 +55,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="stay.walker.com.phone.PhoneActivity" />
 
         <service android:name="stay.walker.com.web.CommonHceService"
             android:exported="true"
