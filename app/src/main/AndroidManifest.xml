@@ -53,6 +53,9 @@
         </activity>
         <activity android:name="stay.walker.com.phone.PhoneActivity" />
         <activity android:name="stay.walker.com.jd.VisitorActivity" >
+
+        </activity>
+        <activity android:name="stay.walker.com.jd.VisitorCodeFaceActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

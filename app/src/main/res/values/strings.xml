@@ -3,4 +3,9 @@
     <string name="cancel">cancel</string>
     <string name="fire">fire</string>
     <string name="dialog_fire_missiles">fire missiles?</string>
+
+
+    <string name="visitor_business" >业务拜访</string>
+    <string name="visitor_interview" >面试</string>
+    <string name="visitor_other" >其他</string>
 </resources>

@@ -20,7 +20,6 @@
         <item name="android:windowIsTranslucent">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
-        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
 
@@ -41,5 +40,44 @@
         <item name="android:backgroundDimAmount">0.4</item>
     </style>
 
+
+    <style name="VisitorTextStyle">
+        <item name="android:layout_width">250dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textColorHint">#ffbdbdbd</item>
+        <item name="android:textColor">#ff000000</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">15dp</item>
+    </style>
+
+
+    <style name="RadioButtonStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">@drawable/btn_blue_grey_selector</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@drawable/text_blue_grey_selector</item>
+        <item name="android:textSize">15sp</item>
+
+    </style>
+
+
+    <style name="VisitorCodeTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ff666666</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="VisitorCodeTabTextStyle" parent="VisitorCodeTextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#ff1f98ff</item>
+    </style>
 
 </resources>

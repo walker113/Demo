@@ -5,4 +5,11 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="common_white">#ffffff</color>
+
+
+
+    <color name="e6_grey">#E6E6E6</color>
+    <color name="ff_blue">#ff1f98ff</color>
+    <color name="zero_blue">#010101</color>
+    <color name="night_grey">#999999</color>
 </resources>

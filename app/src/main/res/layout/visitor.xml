@@ -52,21 +52,21 @@
 
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="28dp"
-                android:text="我要拜访"
-                android:textColor="#ff1f98ff"
-                android:textSize="20sp"
-
                 android:textStyle="bold"
+                android:textColor="@color/ff_blue"
+                android:textSize="20sp"
+                android:text="我要拜访"
+
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_default" />
 
 
             <TextView
                 android:id="@+id/tv_visitor_tab"
+                android:text="被访人信息："
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="被访人信息："
                 android:textColor="#ff000000"
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView"
@@ -75,16 +75,9 @@
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/ed_phone_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@null"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
                 android:hint="请输入名字或电话号"
-                android:paddingLeft="8dp"
-                android:singleLine="true"
-                android:textColor="#ffbdbdbd"
-                android:textSize="15sp"
+                style="@style/VisitorTextStyle"
+                android:background="@null"
                 app:layout_constraintStart_toEndOf="@+id/tv_visitor_tab"
                 app:layout_constraintTop_toTopOf="@+id/tv_visitor_tab" />
 
@@ -111,14 +104,8 @@
 
             <TextView
                 android:id="@+id/tv_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:paddingLeft="8dp"
-                android:text="请选择时间"
-                android:textColor="#ffbdbdbd"
-                android:textSize="15sp"
+                android:hint="请选择时间"
+                style="@style/VisitorTextStyle"
                 app:layout_constraintStart_toEndOf="@+id/tv_time_tab"
                 app:layout_constraintTop_toTopOf="@+id/tv_time_tab" />
 
@@ -144,6 +131,41 @@
                 app:layout_constraintEnd_toEndOf="@+id/tv_time_tab"
                 app:layout_constraintTop_toBottomOf="@+id/tv_time_tab" />
 
+
+            <RadioGroup
+                android:id="@+id/rg"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/tv_reason_tab"
+                app:layout_constraintTop_toBottomOf="@+id/split_time">
+
+                <RadioButton
+                    android:id="@+id/rb_business"
+                    android:text="@string/visitor_business"
+                    android:checked="true"
+                    style="@style/RadioButtonStyle"
+                    />
+
+                <RadioButton
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/visitor_interview"
+                    android:id="@+id/rb_interview"
+                    style="@style/RadioButtonStyle" />
+
+                <RadioButton
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/rb_other"
+                    android:text="@string/visitor_other"
+                    style="@style/RadioButtonStyle"
+                    />
+
+
+            </RadioGroup>
+
             <TextView
                 android:id="@+id/tv_my_info"
                 android:layout_width="wrap_content"
@@ -153,7 +175,7 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginTop="36dp"
                 android:text="我的信息"
-                android:textColor="#ff1f98ff"
+                android:textColor="@color/ff_blue"
 
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -175,16 +197,9 @@
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/ed_phone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
+                android:hint="请输入您的电话号"
+                style="@style/VisitorTextStyle"
                 android:background="@null"
-                android:hint="请您的电话号"
-                android:paddingLeft="8dp"
-                android:textColor="#ffbdbdbd"
-                android:textSize="15sp"
-                android:singleLine="true"
                 app:layout_constraintStart_toEndOf="@+id/tv_tab_phone"
                 app:layout_constraintTop_toTopOf="@+id/tv_tab_phone" />
 
@@ -213,16 +228,9 @@
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/ed_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
+                android:hint="请输入您的姓名"
+                style="@style/VisitorTextStyle"
                 android:background="@null"
-                android:hint="请您的姓名"
-                android:paddingLeft="8dp"
-                android:textColor="#ffbdbdbd"
-                android:textSize="15sp"
-                android:singleLine="true"
                 app:layout_constraintStart_toEndOf="@+id/tv_tab_name"
                 app:layout_constraintTop_toTopOf="@+id/tv_tab_name" />
 
@@ -252,16 +260,9 @@
 
             <android.support.v7.widget.AppCompatEditText
                 android:id="@+id/ed_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginStart="8dp"
-                android:background="@null"
                 android:hint="请您的身份证号（选填）"
-                android:paddingLeft="8dp"
-                android:textColor="#ffbdbdbd"
-                android:textSize="15sp"
-                android:singleLine="true"
+                style="@style/VisitorTextStyle"
+                android:background="@null"
                 app:layout_constraintStart_toEndOf="@+id/tv_tab_id"
                 app:layout_constraintTop_toTopOf="@+id/tv_tab_id" />
 
@@ -314,6 +315,7 @@
                 />
 
             <Button
+                android:id="@+id/btn_commit"
                 android:layout_width="match_parent"
                 android:layout_height="44dp"
                 android:layout_marginEnd="37dp"
@@ -321,6 +323,7 @@
                 android:layout_marginRight="37dp"
                 android:layout_marginStart="37dp"
                 android:layout_marginTop="29dp"
+                android:background="@drawable/blue_solid_fillet"
                 android:text="提交预约申请"
                 android:textColor="#ffffffff"
                 android:textSize="15sp"
