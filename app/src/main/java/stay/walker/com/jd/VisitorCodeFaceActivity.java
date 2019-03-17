@@ -15,6 +15,6 @@ public class VisitorCodeFaceActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_visitor_code_face_pager);
+        setContentView(R.layout.activity_visitor_pager);
     }
 }

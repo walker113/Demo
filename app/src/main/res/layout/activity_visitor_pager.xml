@@ -35,19 +35,22 @@
             android:onClick="goBack"
             android:scaleType="center"
             android:src="@drawable/back_white" />
+
+
     </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar_rl">
+        android:layout_below="@+id/toolbar_rl"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/toolbar_rl"
-            android:orientation="vertical"
-            >
+            android:layout_marginBottom="20dp"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/renwuhuaxiang_rl"
@@ -63,11 +66,11 @@
                     android:id="@+id/tv_name"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
-                    android:text="人物画像"
                     android:layout_marginLeft="5dp"
                     android:drawableLeft="@drawable/ico_gerenzhongxin_ai"
                     android:drawablePadding="5dp"
                     android:gravity="center_vertical"
+                    android:text="人物画像"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
@@ -83,36 +86,28 @@
 
             </RelativeLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/shape_bg"
                 android:orientation="vertical">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_beijing_twe"
-                    tools:ignore="RtlHardcoded">
-
+                    tools:ignore="RtlHardcoded"
+                    >
                     <ImageView
+                        android:background="@drawable/ico_aima_ai_middle_home"
                         android:id="@+id/security_qr_code_iv"
                         android:layout_width="215dp"
                         android:layout_height="215dp"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="60dp" />
-
-                    <TextView
                         android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:layout_alignBottom="@id/security_qr_code_iv"
-                        android:text="凭上方访客码可直接扫码通过访问区域"
-                        android:textColor="#ff333333"
-                        android:textSize="12sp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_marginTop="43dp" />
 
                     <ImageView
                         android:id="@+id/head_img"
@@ -120,33 +115,67 @@
                         android:layout_height="30dp"
                         android:layout_centerInParent="true" />
 
+                    <TextView
+                        android:id="@+id/tv_tip"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/security_qr_code_iv"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="3dp"
+                        android:text="凭上方访客码可直接扫码通过访问区域"
+                        android:textColor="#ff333333"
+                        android:textSize="12sp" />
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tv_tip"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center">
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:layout_centerInParent="true"
+                            android:background="@drawable/shape_test" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_centerInParent="true"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="16dp"
+                            android:background="@drawable/shape_dash_line" />
+
+                    </RelativeLayout>
+
+
                 </RelativeLayout>
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:background="@drawable/bg_code2"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="50dp"
-                    >
+                    android:layout_marginLeft="17dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="17dp"
+                    android:layout_marginBottom="21dp">
 
                     <LinearLayout
                         android:id="@+id/ll_icon"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="22dp"
                         android:orientation="horizontal"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        >
+                        app:layout_constraintTop_toTopOf="parent">
 
                         <TextView
                             android:id="@+id/tv_aid_code"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:drawablePadding="11dp"
                             android:drawableTop="@drawable/ico_aima_ai_middle_home"
+                            android:drawablePadding="11dp"
                             android:gravity="center_horizontal"
                             android:text="AI码"
                             android:textColor="#999999" />
@@ -155,8 +184,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:drawablePadding="11dp"
                             android:drawableTop="@drawable/ico_renlian_ai_middle_home_gray"
+                            android:drawablePadding="11dp"
                             android:gravity="center_horizontal"
                             android:text="AI码"
                             android:textColor="#999999" />
@@ -165,8 +194,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:drawablePadding="11dp"
                             android:drawableTop="@drawable/ico_nfc_middle_home_gray"
+                            android:drawablePadding="11dp"
                             android:gravity="center_horizontal"
                             android:text="AI码"
                             android:textColor="#999999" />
@@ -185,8 +214,8 @@
                     <TextView
                         android:id="@+id/tv_visitor_name"
                         style="@style/VisitorCodeTextStyle"
-                        android:layout_marginLeft="10dp"
                         android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
                         android:text="端木阳"
                         app:layout_constraintStart_toEndOf="@+id/tv_tab_name"
                         app:layout_constraintTop_toTopOf="@+id/tv_tab_name" />
@@ -194,9 +223,9 @@
 
                     <TextView
                         android:id="@+id/tv_tab_phone"
+                        style="@style/VisitorCodeTabTextStyle"
                         android:layout_marginTop="10dp"
                         android:text="联系电话 ："
-                        style="@style/VisitorCodeTabTextStyle"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tab_name" />
 
@@ -204,52 +233,53 @@
                     <TextView
                         android:id="@+id/tv_phone"
                         style="@style/VisitorCodeTextStyle"
-                        android:layout_marginLeft="10dp"
                         android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
                         android:text="132 1234 4325"
                         app:layout_constraintStart_toEndOf="@+id/tv_tab_phone"
                         app:layout_constraintTop_toTopOf="@+id/tv_tab_phone" />
 
                     <TextView
                         android:id="@+id/tv_tab_time"
+                        style="@style/VisitorCodeTabTextStyle"
                         android:layout_marginTop="10dp"
                         android:text="有效时间 ："
-                        style="@style/VisitorCodeTabTextStyle"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tab_phone" />
 
 
                     <TextView
                         android:id="@+id/tv_time"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginStart="10dp"
-                        android:text="2018-08-20  10:30       16:30"
                         style="@style/VisitorCodeTextStyle"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="2018-08-20  10:30       16:30"
                         app:layout_constraintStart_toEndOf="@+id/tv_tab_time"
                         app:layout_constraintTop_toTopOf="@+id/tv_tab_time" />
 
 
                     <TextView
                         android:id="@+id/tv_tab_region"
+                        style="@style/VisitorCodeTabTextStyle"
                         android:layout_marginTop="10dp"
                         android:text="访客区域 ："
-                        style="@style/VisitorCodeTabTextStyle"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/tv_tab_time" />
 
 
                     <TextView
                         android:id="@+id/tv_region"
-                        android:layout_marginLeft="10dp"
+                        style="@style/VisitorCodeTextStyle"
                         android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
                         android:layout_marginBottom="21dp"
                         android:text="B座闸机 1-7F客梯"
-                        style="@style/VisitorCodeTextStyle"
                         app:layout_constraintStart_toEndOf="@+id/tv_tab_region"
                         app:layout_constraintTop_toTopOf="@+id/tv_tab_region" />
                 </android.support.constraint.ConstraintLayout>
 
             </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 
