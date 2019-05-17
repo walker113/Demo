@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.google.gson.Gson;
+import com.socks.library.KLog;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -20,6 +21,7 @@ import stay.walker.com.bean.CloudLoginReq;
 import stay.walker.com.bean.Config;
 import stay.walker.com.bean.PhoneBindCardReq;
 import stay.walker.com.bean.PhoneCardsDetail;
+import stay.walker.com.bean.VoucherQueryReq;
 import stay.walker.com.dialog.InputDialog;
 import stay.walker.com.eventbus.MessageEvent;
 import stay.walker.com.eventbus.SecondActivity;
@@ -42,22 +44,21 @@ public class JdActivtity extends BaseActivity {
         ToastUtils.showShort("open");
         System.out.println("onClick");
 
-        PhoneBindCardReq req = new PhoneBindCardReq(Config.merchantNum, Config.terminalNo);
-        req.mobileNo = "18502076297";
+        VoucherQueryReq req = new VoucherQueryReq();
         RNetUtils.doJdPost(
                 SignUtils.getJsonParams(req, Config.key).toString(),
                 this,
-                new RHttpCallback<PhoneCardsDetail>() {
+                new RHttpCallback<String>() {
                     @Override
-                    public PhoneCardsDetail convert(String data) {
-                        return new Gson().fromJson(data, PhoneCardsDetail.class);
+                    public String convert(String data) {
+                        KLog.e(data);
+                        return null;
                     }
 
                     @Override
-                    public void onSuccess(PhoneCardsDetail value) {
-
+                    public void onSuccess(String value) {
+                        KLog.e(value);
                     }
-
 
                     @Override
                     public void onError(String code, String desc) {
@@ -70,8 +71,8 @@ public class JdActivtity extends BaseActivity {
                     }
                 });
 
-        Intent intent=new Intent(JdActivtity.this,SecondActivity.class);
-        startActivity(intent);
+//        Intent intent=new Intent(JdActivtity.this,SecondActivity.class);
+//        startActivity(intent);
     }
 
     @OnClick(R.id.btn_cloud)

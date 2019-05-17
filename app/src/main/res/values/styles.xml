@@ -80,4 +80,8 @@
         <item name="android:textColor">#ff1f98ff</item>
     </style>
 
+    <style name="FloatWindowAnimation">
+        <item name="android:windowEnterAnimation">@anim/enter_top</item>
+        <item name="android:windowExitAnimation">@anim/exit_top</item>
+    </style>
 </resources>

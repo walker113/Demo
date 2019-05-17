@@ -1,5 +1,6 @@
 package stay.walker.com.scrollRecyclerview;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -20,7 +21,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import stay.walker.com.jd.VisitorCodeFaceActivity;
 import stay.walker.com.retrofitdemo.R;
+import stay.walker.com.web.ShareView;
 
 public class RecyclerViewActivity extends AppCompatActivity implements BaseQuickAdapter.OnItemClickListener, View.OnClickListener, SwitchPopupWindow.OnSwitchListner {
 
@@ -130,6 +133,11 @@ public class RecyclerViewActivity extends AppCompatActivity implements BaseQuick
     public void onClick(View view) {
         SwitchPopupWindow window = new SwitchPopupWindow(this, mStrings, this);
         window.showAsDropDown(mToolbar);
+
+        startActivity(new Intent(this, VisitorCodeFaceActivity.class));
+
+
+
     }
 
     @Override

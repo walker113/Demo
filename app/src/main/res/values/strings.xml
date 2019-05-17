@@ -8,4 +8,8 @@
     <string name="visitor_business" >业务拜访</string>
     <string name="visitor_interview" >面试</string>
     <string name="visitor_other" >其他</string>
+
+    <string name="notification_channel_id">my_channel_01</string>
+    <string name="notification_channel_name">my_channel_01_name</string>
+    <string name="notification_channel_desc">my_channel_01_desc</string>
 </resources>

@@ -2,6 +2,7 @@ package stay.walker.com.web;
 
 import com.google.gson.Gson;
 import com.r.http.cn.RHttp;
+import com.socks.library.KLog;
 import com.trello.rxlifecycle2.LifecycleProvider;
 
 import java.util.Map;
@@ -22,7 +23,8 @@ public class RNetUtils {
     public static void doJdPost(String json, LifecycleProvider lifecycle, RHttpCallback callback) {
         Gson gson = new Gson();
 
-        Map<String, Object> request= gson.fromJson(json, Map.class);
+        Map<String, Object> request = gson.fromJson(json, Map.class);
+        KLog.e(request.toString());
         RHttp http = new RHttp.Builder()
                 .post()
                 .baseUrl(sJdBaseUrl)

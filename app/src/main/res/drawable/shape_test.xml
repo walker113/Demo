@@ -3,17 +3,34 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape android:shape="rectangle">
-            <solid android:color="@android:color/white"/>
+            <solid android:color="#ffffffff"/>
 
         </shape>
     </item>
 
-    <item android:left="24dp"
-        android:gravity="right">
-        <shape android:shape = "rectangle">
+    <item
+        android:gravity="left"
+        >
+        <shape android:shape = "rectangle"
+            >
             <size android:height="12dp"
                 android:width="12dp"/>
-            <solid android:color = "#229AFF" />
+            <solid android:color = "@android:color/holo_green_light" />
+            <corners
+                android:bottomLeftRadius = "0dp"
+                android:bottomRightRadius = "24dp"
+                android:topLeftRadius = "0dp"
+                android:topRightRadius = "24dp"/>
+        </shape>
+    </item>
+    <item
+        android:gravity="right"
+        >
+        <shape
+            android:shape = "rectangle">
+            <size android:height="12dp"
+                android:width="12dp"/>
+            <solid android:color = "@android:color/holo_red_dark" />
             <corners
                 android:bottomLeftRadius = "24dp"
                 android:bottomRightRadius = "0dp"
@@ -23,18 +40,6 @@
     </item>
 
 
-    <item
-        android:right="24dp" android:gravity="left">
-        <shape android:shape = "rectangle">
-            <size android:height="12dp"
-                android:width="12dp"/>
-            <solid android:color = "#229AFF" />
-            <corners
-                android:bottomLeftRadius = "0dp"
-                android:bottomRightRadius = "24dp"
-                android:topLeftRadius = "0dp"
-                android:topRightRadius = "24dp"/>
-        </shape>
-    </item>
+
 
 </layer-list>

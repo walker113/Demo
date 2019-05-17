@@ -37,6 +37,10 @@
             android:src="@drawable/back_white" />
 
 
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
     </RelativeLayout>
 
     <ScrollView
@@ -127,17 +131,26 @@
                         android:textSize="12sp" />
 
                     <RelativeLayout
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/tv_tip"
                         android:layout_marginTop="10dp"
-                        android:gravity="center">
+                        android:gravity="center"
+                        android:background="#ffffffff"
+                        >
 
                         <View
-                            android:layout_width="match_parent"
+                            android:layout_width="12dp"
                             android:layout_height="24dp"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/shape_test" />
+                            android:layout_alignParentLeft="true"
+                            android:background="@drawable/shape_left" />
+
+
+                        <View
+                            android:layout_width="12dp"
+                            android:layout_height="24dp"
+                            android:layout_alignParentRight="true"
+                            android:background="@drawable/shape_right" />
 
                         <View
                             android:layout_width="match_parent"

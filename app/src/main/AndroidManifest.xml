@@ -17,6 +17,9 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
 
     <application
         android:name=".qrcode.QrApp"
@@ -42,9 +45,15 @@
 
         </activity>
         <activity android:name="stay.walker.com.web.WebPhotoActivity" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
 
         </activity>
         <activity android:name="stay.walker.com.jd.JdActivtity" >
+
 
         </activity>
         <activity android:name="stay.walker.com.eventbus.SecondActivity" />
@@ -56,6 +65,15 @@
 
         </activity>
         <activity android:name="stay.walker.com.jd.VisitorCodeFaceActivity" >
+
+        </activity>
+        <activity android:name="stay.walker.com.toolbar.ToolbarActivity" >
+
+
+
+        </activity>
+        <activity android:name="stay.walker.com.kotlin.KotlinActivity" />
+        <activity android:name="stay.walker.com.coupons.CouponsActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

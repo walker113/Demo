@@ -27,9 +27,9 @@ public class Config {
     public static String appkey;
 
 //    /*************************************佳都-开发环境*****************************************************/
-//    public EnmType enmType = EnmType.DEPOENM;    // 开发环境
+    public static EnmType enmType = EnmType.DEPOENM;    // 开发环境
 //    public EnmType enmType = EnmType.TESTENM;   // 测试环境
-    public static EnmType enmType = EnmType.PROENM;    //  生产环境
+//    public static EnmType enmType = EnmType.PROENM;    //  生产环境
 //	  public EnmType enmType = EnmType.GAMMA;
 
 
@@ -58,7 +58,7 @@ public class Config {
 //                UnionConfig.key = "uj0g05vj5sakl1303364e31q579m88a6";
                 Config.key = "yb1ra614s38fs82jx34tsf565dj3x428";
 
-                baseUrl = "http://kfa.pcidata.cn:9930/api/";
+                baseUrl = "http://kfa.pcidata.cn:9930/";
                 break;
 
             case TESTENM:

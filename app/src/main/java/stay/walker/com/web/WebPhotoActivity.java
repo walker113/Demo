@@ -1,13 +1,17 @@
 package stay.walker.com.web;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Window;
+import android.webkit.JavascriptInterface;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
+
+import com.socks.library.KLog;
 
 import stay.walker.com.retrofitdemo.R;
 
@@ -34,10 +38,11 @@ public class WebPhotoActivity extends AppCompatActivity {
     private void initWebView() {
         mWebView = (WebView) findViewById(R.id.web_view);
         mProgressbar = (ProgressBar) findViewById(R.id.progress_bar);
-        String url = "https://www.google.com";
+        String url = "http://xilu.pcidata.cn/mobile/nav.php";
         mWebView.loadUrl(url);
     }
 
+    @SuppressLint({"AddJavascriptInterface", "SetJavaScriptEnabled"})
     private void initWebSettings() {
         WebSettings settings = mWebView.getSettings();
         settings.setUseWideViewPort(true);
@@ -54,6 +59,15 @@ public class WebPhotoActivity extends AppCompatActivity {
         settings.setJavaScriptEnabled(true);
         // 支持缩放
         settings.setSupportZoom(true);
+
+        mWebView.addJavascriptInterface(new Object(){
+            @JavascriptInterface
+            public void coupon(int i) {
+
+                KLog.e(i);
+            }
+
+        }, "android");
     }
 
     private void initAppBar() {
