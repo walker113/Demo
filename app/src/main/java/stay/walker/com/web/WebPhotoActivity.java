@@ -39,6 +39,7 @@ public class WebPhotoActivity extends AppCompatActivity {
         mWebView = (WebView) findViewById(R.id.web_view);
         mProgressbar = (ProgressBar) findViewById(R.id.progress_bar);
         String url = "http://xilu.pcidata.cn/mobile/nav.php";
+        url = "http://keyless.pcimall.cn/mobile/ikeylessOperate/index.html?rd=B3Mix00IjlU+ok8uWKS0pS9WHeRSn9l5fvKBu55+WjplX7FaKGl4iS8QSJPK5mqyuLwrlg1EGasSSYT6aZLmzLp9UBXkKjf9ddHZeAb5YcKB42Cw5ba+9ccg/w91ct6Y&rs=5a4eafcc01f6f40c6631f58e66b2c3d70fc72831f805b72c044b4bd58753535";
         mWebView.loadUrl(url);
     }
 

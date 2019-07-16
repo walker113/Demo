@@ -41,19 +41,19 @@ public class FloatPermissionManager {
 
     public boolean checkPermission(Context context) {
         if(Build.VERSION.SDK_INT < 23) {
-            if(RomUtils.checkIsMiuiRom()) {
+            if(RomUtils.Companion.checkIsMiuiRom()) {
                 return this.miuiPermissionCheck(context);
             }
 
-            if(RomUtils.checkIsMeizuRom()) {
+            if(RomUtils.Companion.checkIsMeizuRom()) {
                 return this.meizuPermissionCheck(context);
             }
 
-            if(RomUtils.checkIsHuaweiRom()) {
+            if(RomUtils.Companion.checkIsHuaweiRom()) {
                 return this.huaweiPermissionCheck(context);
             }
 
-            if(RomUtils.checkIs360Rom()) {
+            if(RomUtils.Companion.checkIs360Rom()) {
                 return this.qikuPermissionCheck(context);
             }
         }
@@ -78,7 +78,7 @@ public class FloatPermissionManager {
     }
 
     private boolean commonROMPermissionCheck(Context context) {
-        if(RomUtils.checkIsMeizuRom()) {
+        if(RomUtils.Companion.checkIsMeizuRom()) {
             return this.meizuPermissionCheck(context);
         } else {
             Boolean result = Boolean.valueOf(true);
@@ -98,13 +98,13 @@ public class FloatPermissionManager {
 
     public void applyPermission(Context context) {
         if(Build.VERSION.SDK_INT < 23) {
-            if(RomUtils.checkIsMiuiRom()) {
+            if(RomUtils.Companion.checkIsMiuiRom()) {
                 this.miuiROMPermissionApply(context);
-            } else if(RomUtils.checkIsMeizuRom()) {
+            } else if(RomUtils.Companion.checkIsMeizuRom()) {
                 this.meizuROMPermissionApply(context);
-            } else if(RomUtils.checkIsHuaweiRom()) {
+            } else if(RomUtils.Companion.checkIsHuaweiRom()) {
                 this.huaweiROMPermissionApply(context);
-            } else if(RomUtils.checkIs360Rom()) {
+            } else if(RomUtils.Companion.checkIs360Rom()) {
                 this.ROM360PermissionApply(context);
             }
         }
@@ -166,7 +166,7 @@ public class FloatPermissionManager {
     }
 
     private void commonROMPermissionApply(final Context context) {
-        if(RomUtils.checkIsMeizuRom()) {
+        if(RomUtils.Companion.checkIsMeizuRom()) {
             this.meizuROMPermissionApply(context);
         } else if(Build.VERSION.SDK_INT >= 23) {
             this.showConfirmDialog(context, new FloatPermissionManager.OnConfirmResult() {

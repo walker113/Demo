@@ -38,6 +38,7 @@ class KotlinActivity : Activity(), View.OnClickListener {
         // 别的平台类型，Kotlin是不能做限制的，所以并不是说Kotlin就没有空指针了
         btn.setText("")
         btn.setOnClickListener(this)
+        // 我自己去申请了个证书，SSL
 
 
     }

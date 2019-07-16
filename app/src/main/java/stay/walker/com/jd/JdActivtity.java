@@ -17,6 +17,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import q.rorbin.badgeview.QBadgeView;
 import stay.walker.com.bean.CloudLoginReq;
 import stay.walker.com.bean.Config;
 import stay.walker.com.bean.PhoneBindCardReq;
@@ -97,6 +98,8 @@ public class JdActivtity extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        new QBadgeView(this).bindTarget(findViewById(R.id.btn_cloud));
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)

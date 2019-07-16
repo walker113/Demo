@@ -2,6 +2,7 @@ package stay.walker.com.dialog;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.os.Build;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +13,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import androidx.annotation.RequiresApi;
 
 import stay.walker.com.retrofitdemo.R;
 
@@ -57,6 +60,7 @@ public class InputDialog {
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public void showDialog() {
 
         View rootView = LayoutInflater.from(context).inflate(R.layout.dialog_select_ios, null);

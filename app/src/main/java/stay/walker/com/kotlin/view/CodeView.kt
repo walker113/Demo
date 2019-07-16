@@ -9,12 +9,15 @@ import android.support.v7.widget.AppCompatTextView
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.Gravity
+import androidx.annotation.RequiresApi
 import stay.walker.com.retrofitdemo.R
 import java.util.*
 
 class CodeView : AppCompatTextView {
+    @RequiresApi(Build.VERSION_CODES.M)
     constructor(context: Context) : this(context, null)
 
+    @RequiresApi(Build.VERSION_CODES.M)
     constructor(context: Context, attrs: AttributeSet?):super(context, attrs) {
         setTextSize(TypedValue.COMPLEX_UNIT_DIP, 18f)
         gravity = Gravity.CENTER

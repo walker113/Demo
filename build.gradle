@@ -1,5 +1,5 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
-
+apply from: this.file('commom.gradle')
 buildscript {
     
     repositories {
@@ -26,3 +26,42 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+this.beforeEvaluate { println "init completed ..." }
+this.afterEvaluate { println "after config ..." }
+
+// 直接在根工程中定义 扩展块
+//ext {
+//    defCompileSdkVersion = 26
+//    defExtCompileSdkVersion = 28
+//    defExtSupportAppcompat = 'com.android.support:appcompat-v7:28.0.0'
+//}
+
+println "getRootDir - " + getRootDir()
+println "getBuildDir().absolutePath - " + getBuildDir().absolutePath
+println "getProjectDir().absolutePath - " + getProjectDir().absolutePath
+
+// getRootDir - F:\Demo
+// getBuildDir().absolutePath - F:\Demo\build
+// getProjectDir().absolutePath - F:\Demo
+
+// 跟工程下寻找文件名
+def getContent(String path) {
+    println path
+    try {
+        // file() 相对于当前的project工程开始查找
+        def file = file(path)
+        // files() 定位一个或者多个文件
+        return file.text
+    } catch (GradleException e) {
+        println 'file not found'
+    }
+    return null
+
+}
+
+println getContent('commom.gradle')
+
+// gradlew tasks 查看所有的tasks
+
+
