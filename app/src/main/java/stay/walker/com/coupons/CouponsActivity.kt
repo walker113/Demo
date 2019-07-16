@@ -20,9 +20,9 @@ class CouponsActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_coupons)
+        setContentView(R.layout.center)
 
-        initView()
+//        initView()
     }
 
     override fun onResume() {
@@ -34,8 +34,8 @@ class CouponsActivity : AppCompatActivity() {
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
 
-        print(mIvBlue)
-        print(mIvPic)
+//        print(mIvBlue)
+//        print(mIvPic)
 
     }
 

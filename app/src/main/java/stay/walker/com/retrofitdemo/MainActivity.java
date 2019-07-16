@@ -18,6 +18,7 @@ import java.util.Arrays;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
@@ -58,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
                 doTest();
             }
         }).start();
+
+
+        OkHttpClient okHttpClient = new OkHttpClient.Builder().build();
+//        okhttp3.Call call = okHttpClient.newCall();
+//        call.enqueue();
     }
 
     GitHubService service;

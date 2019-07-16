@@ -26,3 +26,36 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+this.beforeEvaluate {
+    println "---- 配置前 ---"
+}
+
+this.afterEvaluate {
+    println "==== 配置后 ---"
+}
+
+this.getAllprojects().each {proj ->
+    println proj.name
+}
+
+project('vuandroidsdk') {
+    apply plugin: 'com.android.library'
+    version '1.0-realease'
+    dependencies {}
+    android {}
+}
+
+// 配置当前节点工程和其subproject的所有project
+allprojects {
+    group 'com.imooc'
+    version '1.0-realease'
+}
+
+println "test group --- " + project('test').group
+
+// subprojects不包括当前节点工程，只包括它的子工程
+subprojects { Project project ->
+    println "subprojects - " + project.name
+
+}
