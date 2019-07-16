@@ -3,11 +3,14 @@ package stay.walker.com.coupons
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.Gravity
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.socks.library.KLog
+import q.rorbin.badgeview.QBadgeView
 import stay.walker.com.retrofitdemo.R
+
 
 class CouponsActivity : AppCompatActivity() {
 
@@ -37,7 +40,11 @@ class CouponsActivity : AppCompatActivity() {
 //        print(mIvBlue)
 //        print(mIvPic)
 
+
     }
+
+
+
 
     fun print(view: View) {
         Log.e("TAG", "w = " + view.width + ", h = " + view.height)
@@ -49,6 +56,9 @@ class CouponsActivity : AppCompatActivity() {
         mTvDesc = findViewById(R.id.tv_desc)
         mIvBlue = findViewById(R.id.iv_blue)
         mIvPic = findViewById(R.id.iv_pic)
+
+
+        QBadgeView(this).bindTarget(mIvBlue).setBadgeNumber(-1)
     }
 
 

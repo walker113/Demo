@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tv_b_time"
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
@@ -33,15 +33,24 @@
         app:layout_constraintStart_toStartOf="@+id/iv_pic"
         app:layout_constraintTop_toBottomOf="@+id/iv_pic" />
 
-    <ImageView
-        android:id="@+id/iv_blue"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="747:211"
+
+
+    <FrameLayout
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_b_time"
-        app:srcCompat="@drawable/cedjj_panel_daijinjuan_blue" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:id="@+id/fl_blue"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="747:211"
+        android:layout_width="wrap_content"
+        >
+        <ImageView
+            android:id="@+id/iv_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/cedjj_panel_daijinjuan_blue"
+            />
+    </FrameLayout>
 
 
     <TextView
@@ -51,10 +60,10 @@
         android:text="立即领取"
         android:textColor="#ffffffff"
         android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_blue"
-        app:layout_constraintEnd_toEndOf="@+id/iv_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/fl_blue"
+        app:layout_constraintEnd_toEndOf="@+id/fl_blue"
         app:layout_constraintStart_toEndOf="@+id/tv_desc"
-        app:layout_constraintTop_toTopOf="@+id/iv_blue"
+        app:layout_constraintTop_toTopOf="@+id/fl_blue"
         app:layout_constraintVertical_bias="0.46"
         app:layout_constraintHorizontal_bias="0.65"
         />
@@ -66,11 +75,11 @@
         android:text="羊城通乘车码代金券"
         android:textColor="#ffffffff"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/iv_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/fl_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/iv_blue"
+        app:layout_constraintTop_toTopOf="@+id/fl_blue"
         app:layout_constraintVertical_bias="0.329" />
 
     <TextView

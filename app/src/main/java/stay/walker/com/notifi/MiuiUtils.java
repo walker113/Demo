@@ -22,7 +22,7 @@ public class MiuiUtils {
     }
 
     public static int getMiuiVersion() {
-        String version = RomUtils.getSystemProperty("ro.miui.ui.version.name");
+        String version = RomUtils.Companion.getSystemProperty("ro.miui.ui.version.name");
         if(version != null) {
             try {
                 return Integer.parseInt(version.substring(1));

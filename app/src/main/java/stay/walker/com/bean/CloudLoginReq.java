@@ -21,6 +21,16 @@ import stay.walker.com.web.RNetUtils;
  */
 public class CloudLoginReq {
 
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals(obj);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
     private static final String secret = "K0IKVix0MDAr4MaMu3Q4Zg";
     private String
             act = "sigin",

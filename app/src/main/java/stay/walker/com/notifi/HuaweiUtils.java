@@ -35,7 +35,7 @@ public class HuaweiUtils {
             Intent e = new Intent();
             ComponentName intent1 = new ComponentName("com.huawei.systemmanager", "com.huawei.systemmanager.addviewmonitor.AddViewMonitorActivity");
             e.setComponent(intent1);
-            if(RomUtils.getEmuiVersion() == 3.1D) {
+            if(RomUtils.Companion.getEmuiVersion() == 3.1D) {
                 WindowUtil.scanForActivity(context).startActivityForResult(e, 1);
             } else {
                 intent1 = new ComponentName("com.huawei.systemmanager", "com.huawei.notificationmanager.ui.NotificationManagmentActivity");

@@ -33,7 +33,6 @@
             android:layout_width="48dp"
             android:layout_height="match_parent"
             android:layout_centerVertical="true"
-            android:onClick="goBack"
             android:scaleType="center"
             android:src="@drawable/back_white" />
 
