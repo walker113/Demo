@@ -58,7 +58,11 @@
         </activity>
         <activity android:name="stay.walker.com.phone.PhoneActivity" />
         <activity android:name="stay.walker.com.jd.VisitorActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name="stay.walker.com.jd.VisitorCodeFaceActivity" >
 
@@ -106,11 +110,7 @@
 
         </activity>
         <activity android:name="stay.walker.com.shadow.ShadowActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <service android:name="stay.walker.com.web.CommonHceService"

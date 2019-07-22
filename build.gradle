@@ -45,23 +45,14 @@ println "getProjectDir().absolutePath - " + getProjectDir().absolutePath
 // getBuildDir().absolutePath - F:\Demo\build
 // getProjectDir().absolutePath - F:\Demo
 
-// 跟工程下寻找文件名
-def getContent(String path) {
-    println path
-    try {
-        // file() 相对于当前的project工程开始查找
-        def file = file(path)
-        // files() 定位一个或者多个文件
-        return file.text
-    } catch (GradleException e) {
-        println 'file not found'
-    }
-    return null
 
-}
-
-println getContent('commom.gradle')
 
 // gradlew tasks 查看所有的tasks
 
+task deleteFile {
+    println '----------beforeEvaluate'
+    def file = file('F:\\Demo\\app\\build\\intermediates')
+    def ret = file.deleteDir()
+    println 'deleteDir - ' + ret
+}
 

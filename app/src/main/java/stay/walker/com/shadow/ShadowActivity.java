@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.method.MetaKeyKeyListener;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,10 +37,13 @@ public class ShadowActivity extends AppCompatActivity {
 //        LoadingDialog dialog = new LoadingDialog();
 //        dialog.show(getSupportFragmentManager(), "TAG");
 
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+        KLog.e(dm.widthPixels + ", " + dm.heightPixels);
 
         GuideBuilder builder = new GuideBuilder();
         builder.setTargetView(imageView)
-                .setAlpha(150)
+                .setAlpha(200)
                 .setHighTargetPadding(20)
                 .setOverlayTarget(false)
                 .setOutsideTouchable(false)
@@ -56,6 +61,7 @@ public class ShadowActivity extends AppCompatActivity {
         guide = builder.createGuide();
         guide.setShouldCheckLocInWindow(false);
         guide.show(ShadowActivity.this);
+
     }
 
 

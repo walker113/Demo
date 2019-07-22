@@ -90,6 +90,56 @@
                 app:layout_constraintStart_toStartOf="@+id/ed_phone_name"
                 app:layout_constraintTop_toBottomOf="@+id/ed_phone_name" />
 
+            <!--联系人-->
+            <TextView
+                android:visibility="invisible"
+                android:id="@+id/tv_contacts_tab"
+                android:layout_marginTop="32dp"
+                android:text="联系人："
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#ff000000"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/tv_visitor_tab"
+                app:layout_constraintTop_toBottomOf="@+id/tv_visitor_tab" />
+
+
+            <RadioGroup
+                android:id="@+id/rg_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="12dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/tv_visitor_tab"
+                app:layout_constraintTop_toBottomOf="@+id/view">
+
+                <!--<RadioButton-->
+                    <!--android:text="林小林"-->
+                    <!--android:checked="true"-->
+                    <!--style="@style/RadioButtonStyle"-->
+                    <!--android:textSize="12sp"-->
+                    <!--/>-->
+
+                <!--<RadioButton-->
+
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:text="江小江"-->
+                    <!--style="@style/RadioButtonStyle"-->
+                    <!--android:textSize="12sp"-->
+                    <!--/>-->
+
+                <!--<RadioButton-->
+
+                    <!--android:layout_marginLeft="10dp"-->
+                    <!--android:text="文小文"-->
+                    <!--style="@style/RadioButtonStyle"-->
+                    <!--android:textSize="12sp"-->
+                    <!--/>-->
+
+            </RadioGroup>
+
 
             <TextView
                 android:id="@+id/tv_time_tab"
@@ -99,8 +149,8 @@
                 android:text="来访时间："
                 android:textColor="#ff000000"
                 android:textSize="15sp"
-                app:layout_constraintEnd_toEndOf="@+id/tv_visitor_tab"
-                app:layout_constraintTop_toBottomOf="@+id/tv_visitor_tab" />
+                app:layout_constraintEnd_toEndOf="@+id/tv_contacts_tab"
+                app:layout_constraintTop_toBottomOf="@+id/tv_contacts_tab" />
 
             <TextView
                 android:id="@+id/tv_time"

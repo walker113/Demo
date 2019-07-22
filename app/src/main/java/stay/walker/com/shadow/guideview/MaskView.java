@@ -13,8 +13,10 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 
 import com.socks.library.KLog;
 
@@ -59,7 +61,12 @@ class MaskView extends ViewGroup {
         Point size = new Point();
         size.x = getResources().getDisplayMetrics().widthPixels;
         size.y = getResources().getDisplayMetrics().heightPixels;
+        DisplayMetrics dm = new DisplayMetrics();
+//        context.getWindowManager().getDefaultDisplay().getRealMetrics(dm);
 
+
+        KLog.e(size.x + ", " + size.y);
+//        KLog.e(displayMetrics.widthPixels + ", " + displayMetrics.heightPixels);
         mEraserBitmap = Bitmap.createBitmap(size.x, size.y, Bitmap.Config.ARGB_8888);
         mEraserCanvas = new Canvas(mEraserBitmap);
 
@@ -152,6 +159,11 @@ class MaskView extends ViewGroup {
                     break;
                 case LayoutParams.ANCHOR_OVER://中心
                     KLog.e(((int) mTargetRect.width() - child.getMeasuredWidth()));
+                    KLog.e(((int) mTargetRect.width() - child.getMeasuredWidth()) >> 1);
+                    KLog.e(((int) mTargetRect.height() - child.getMeasuredHeight()));
+                    KLog.e(((int) mTargetRect.height() - child.getMeasuredHeight()) >> 1);
+                    KLog.e(((int) mTargetRect.width() + child.getMeasuredWidth()));
+                    KLog.e(((int) mTargetRect.height() + child.getMeasuredHeight()));
 
                     mChildTmpRect.left = ((int) mTargetRect.width() - child.getMeasuredWidth()) >> 1;
                     mChildTmpRect.top = ((int) mTargetRect.height() - child.getMeasuredHeight()) >> 1;
@@ -245,6 +257,9 @@ class MaskView extends ViewGroup {
         if (mPaddingBottom != 0) {
             mTargetRect.bottom += mPaddingBottom;
         }
+        KLog.e("mTargetRect.bottom - " +mTargetRect.bottom);
+        KLog.e("mTargetRect.top - " + mTargetRect.top);
+        KLog.e("mTargetRect.left - " + mTargetRect.left);
     }
 
     @Override

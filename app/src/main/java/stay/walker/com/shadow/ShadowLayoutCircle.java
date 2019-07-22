@@ -126,8 +126,8 @@ public class ShadowLayoutCircle extends FrameLayout {
     private Bitmap createShadowBitmap(int shadowWidth, int shadowHeight, float cornerRadius, float shadowRadius,
                                       float dx, float dy, int shadowColor, int fillColor) {
 
-//        Bitmap output = Bitmap.createBitmap(shadowWidth, shadowHeight, Bitmap.Config.ALPHA_8);
-        Bitmap output = Bitmap.createBitmap(shadowWidth, shadowHeight, Bitmap.Config.ARGB_4444);
+        Bitmap output = Bitmap.createBitmap(shadowWidth, shadowHeight, Bitmap.Config.ALPHA_8);
+//        Bitmap output = Bitmap.createBitmap(shadowWidth, shadowHeight, Bitmap.Config.ARGB_4444);
         Canvas canvas = new Canvas(output);
 
         RectF shadowRect = new RectF(
@@ -167,7 +167,7 @@ public class ShadowLayoutCircle extends FrameLayout {
 
         KLog.e(cornerRadius);
         canvas.drawRoundRect(shadowRect, cornerRadius, cornerRadius, shadowPaint);
-        canvas.drawRoundRect(shadowRect, cornerRadius, cornerRadius, shadowPaint);
+//        canvas.drawRoundRect(shadowRect, cornerRadius, cornerRadius, shadowPaint);
 //        canvas.drawRoundRect(shadowRect, cornerRadius, cornerRadius, shadowPaint);
 
 

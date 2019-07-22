@@ -86,16 +86,16 @@
             app:layout_constraintTop_toTopOf="@+id/iv_face"
             app:layout_constraintBottom_toBottomOf="@+id/iv_face"
 
-            app:sl_cornerRadius="40dp"
+            app:sl_cornerRadius="24dp"
             app:sl_dx="0dp"
             app:sl_dy="0dp"
-            app:sl_shadowColor="#efffffff"
+            app:sl_shadowColor="#55229123"
             app:sl_shadowRadius="18dp">
 
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:src="@drawable/ico_renlian_ai_middle_home" />
 
         </stay.walker.com.shadow.ShadowLayoutCircle>

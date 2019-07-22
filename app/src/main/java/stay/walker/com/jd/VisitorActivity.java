@@ -1,6 +1,13 @@
 package stay.walker.com.jd;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.GradientDrawable;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.StateListDrawable;
+import android.graphics.drawable.shapes.RoundRectShape;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
@@ -9,18 +16,23 @@ import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.blankj.utilcode.util.ToastUtils;
 import com.socks.library.KLog;
 
+import java.lang.reflect.TypeVariable;
 import java.util.Arrays;
 import java.util.List;
+import java.util.jar.Attributes;
 
 import stay.walker.com.retrofitdemo.R;
 import stay.walker.com.scrollRecyclerview.VisitorPopupWindow;
@@ -78,6 +90,76 @@ public class VisitorActivity extends AppCompatActivity implements View.OnClickLi
         mEdId = findViewById(R.id.ed_id);
         mEdId.setOnFocusChangeListener(this);
         mEdId.addTextChangedListener(this);
+        initContacts();
+    }
+
+    private RadioGroup mRgContacts;
+    private String[] names;
+    private void initContacts() {
+        mRgContacts = findViewById(R.id.rg_contacts);
+
+
+        names = new String[]{"张小张", "林小林"};
+
+
+        for (int i = 0; i < names.length; i++) {
+            RadioButton rb = new RadioButton(this);
+            RadioGroup.LayoutParams params =
+                    new RadioGroup.LayoutParams(
+                            ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+
+
+            // R.style.RadioButtonStyle 怎么转换为 Drawable
+            // R.style 和 R.styleable 关系; AttributeSet
+            // StateListDrawable
+            // 自定义shape
+//            rb.setBackgroundResource(R.drawable.btn_blue_grey_selector);
+
+
+            float radius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 20, getResources().getDisplayMetrics());
+
+            GradientDrawable drawable = new GradientDrawable();
+            drawable.setCornerRadius(radius);
+            drawable.setStroke(2, Color.parseColor("#ff1f98ff"));
+
+//            float[] outerR = new float[]{radius, radius, radius, radius, radius, radius, radius, radius};
+//            RoundRectShape rr = new RoundRectShape(outerR, null, null);
+//            ShapeDrawable drawable = new ShapeDrawable(rr);
+//            drawable.getPaint().setColor(Color.parseColor("#ff1f98ff"));
+//            drawable.getPaint().setStyle(Paint.Style.STROKE);
+//            drawable.getPaint().setStrokeWidth(2);
+
+            StateListDrawable stalistDrawable = new StateListDrawable();
+            stalistDrawable.addState(
+                    new int []{
+                            android.R.attr.state_checked,
+                    },drawable);
+//                    getResources().getDrawable(R.drawable.blue_fillet));
+            stalistDrawable.addState(
+                    new int[]{},
+                    getResources().getDrawable(R.drawable.grey_fillet));
+            rb.setBackground(stalistDrawable);
+
+
+            rb.setTextColor(getResources().getColorStateList(R.color.ee_text_black_grey_selector));
+            rb.setButtonDrawable(null);
+            rb.setText(names[i]);
+            int padding = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 5, getResources().getDisplayMetrics());
+            rb.setPadding(padding, padding, padding, padding);
+
+            // 样式就是通过一种方式给一个View或一组View设置一些共同的属性值，所以不可能能使用代码来设置。
+
+            // attr 是自定义属性
+            mRgContacts.addView(rb);
+        }
+
+        mRgContacts.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                KLog.e(checkedId);
+                KLog.e(names[checkedId - 1]);
+            }
+        });
     }
 
     List<String> mStrings;
